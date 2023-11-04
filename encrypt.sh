@@ -43,6 +43,7 @@ encrypt_file() {
     echo "Do you wish to remove the original file [Y/N]: "
     read rmove
 
+    #Removing/keeping the original file as per user input
     case "${rmove}" in
     y | Y)
         rm $file
