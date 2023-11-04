@@ -34,7 +34,7 @@ encrypt_file() {
     local file="$1"
     local new_filename="$2"
 
-    #Encrypting the file and ouput the name of new file
+    #Encrypting the file and ouput the name of new file:
     gpg -c --output "${new_filename}.gpg" "$file"
 
     echo "$file" "Encrypted Successfully!!"
@@ -43,7 +43,7 @@ encrypt_file() {
     echo "Do you wish to remove the original file [Y/N]: "
     read rmove
 
-    #Removing/keeping the original file as per user input
+    #Removing/keeping the original file as per user input:
     case "${rmove}" in
     y | Y)
         rm $file
@@ -58,7 +58,7 @@ encrypt_file() {
     esac
 }
 
-# Function to decrypt a file with .gpg extension present in the directory
+# Function to decrypt a file with .gpg extension present in the directory:
 decrypt_file() {
     local encrypted_file="$1"
     local output_file="$2"
