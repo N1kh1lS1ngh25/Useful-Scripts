@@ -40,7 +40,7 @@ foreach ($user in $users) {
 }
 
 ###########################################################################################################################
-
+###########################################################################################################################
 # Define the path to the PowerShell script
 $scriptPath = "C:\Users\NikhilS\Desktop\DeleteTemporary.ps1"
 # Create a new scheduled task action
