@@ -39,8 +39,12 @@ foreach ($user in $users) {
     }
 }
 
-###########################################################################################################################
-###########################################################################################################################
+#########################################################################################################################################
+# The below part is used to schedule a task at Windows Task Scheduler to run this script at "Startup" of the system"                    #
+# Running the script and registering the task with the Register-ScheduledTask cmdlet requires administrative privileges                 #
+#  to manage scheduled tasks on the system.                                                                                             #                                      #
+#########################################################################################################################################
+
 # Define the path to the PowerShell script
 $scriptPath = "C:\Users\NikhilS\Desktop\DeleteTemporary.ps1"
 # Create a new scheduled task action
