@@ -39,4 +39,10 @@ foreach ($user in $users) {
     }
 }
 
+	$scriptPath = "C:\Users\NikhilS\Desktop\DeleteTemporary.ps1"
+$action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy Bypass -File `"$scriptPath`""
+	  $trigger = New-ScheduledTaskTrigger -Daily -AtStartup
+$settings = New-ScheduledTaskSettingsSet
+$task = New-ScheduledTask -Action $action -Trigger $trigger -Settings $settings
+Register-ScheduledTask -TaskName "TempDeleter" -TaskPath "\" -InputObject $Task -User "SYSTEM"
 
