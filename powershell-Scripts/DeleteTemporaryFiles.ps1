@@ -39,10 +39,28 @@ foreach ($user in $users) {
     }
 }
 
-	$scriptPath = "C:\Users\NikhilS\Desktop\DeleteTemporary.ps1"
+###########################################################################################################################
+
+# Define the path to the PowerShell script
+$scriptPath = "C:\Users\NikhilS\Desktop\DeleteTemporary.ps1"
+# Create a new scheduled task action
 $action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy Bypass -File `"$scriptPath`""
-	  $trigger = New-ScheduledTaskTrigger -Daily -AtStartup
+# This action will execute the PowerShell script located at $scriptPath. 
+# The -ExecutionPolicy Bypass argument is used to allow the script to run even if it is signed.
+
+# Create a new scheduled task trigger
+$trigger = New-ScheduledTaskTrigger -Daily -AtStartup
+# This trigger will run the task every day "at startup".
+
+# Create a new scheduled task settings set
 $settings = New-ScheduledTaskSettingsSet
+# This settings set will be used to configure the task.
+
+# Create a new scheduled task
 $task = New-ScheduledTask -Action $action -Trigger $trigger -Settings $settings
+# This settings set will be used to configure the task.
+
+# Create a new scheduled task
 Register-ScheduledTask -TaskName "TempDeleter" -TaskPath "\" -InputObject $Task -User "SYSTEM"
+# This will register the task so that it runs automatically.
 
