@@ -54,7 +54,7 @@ Copy-Item -Path "$sourceDir" -Destination "$destinationDir\$newDir" -Recurse
 Set-Location $destinationDir\$newDir
 
 # Backing up all the files to s3bucket s3: customization-files
-aws s3 cp $destinationDir\$newDir s3://ustomization-files/$newDir --recursive
+aws s3 cp $destinationDir\$newDir s3://customization-files/$newDir --recursive
 
 Write-Host "Files Backed-up at : $destinationDir\$newDir"
 
