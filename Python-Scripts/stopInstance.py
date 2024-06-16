@@ -2,7 +2,7 @@ import json
 import boto3
 import logging
 
-# Create an EC2 client for the specified AWS region
+# Create an EC2 client for your AWS region
 client = boto3.client('ec2', region_name='ap-south-1')
 
 # Configure logging
@@ -21,15 +21,15 @@ def lambda_handler(event, context):
     """
 
     try:
-        # Describe EC2 instances with a specific tag ('Name:Readywire-build-EC2')
+        # Describe EC2 instances with a specific tag ('Name:Build-EC2')
         response = client.describe_instances(
             Filters=[{
                 'Name': 'tag:Name',
-                'Values': ['Readywire-build-EC2']
+                'Values': ['Build-EC2']
             }]
         )
 
-        # Check if instances were found
+        # Check if instances was found
         if response['Reservations']:
             instance_id = response["Reservations"][0]['Instances'][0]['InstanceId']
 
@@ -49,5 +49,5 @@ def lambda_handler(event, context):
     # Return a response for the Lambda function
     return {
         'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
+        'body': json.dumps('This Lambda Function stops the Instances with Specific Tags')
     }
