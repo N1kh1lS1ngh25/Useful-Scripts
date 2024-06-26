@@ -23,7 +23,7 @@ foreach ($disk in $DiskInfo) {
 }
 
 # Check if disk usage > 95%
-$DisksAbove95 = $Array | Where-Object { [double]$_."Used_%" -gt 10 }
+$DisksAbove95 = $Array | Where-Object { [double]$_."Used_%" -gt 90 }
 
 
 if ($DisksAbove95.Count -gt 0) {
