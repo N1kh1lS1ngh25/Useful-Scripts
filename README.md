@@ -17,8 +17,7 @@ This repository is for Bash, PowerShell and other useful scripts, which I have w
 
 <img src = "https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=whit"/>
 
-1. [File ecnryption using GNU Privacy Guard]()
-2. [To export MySQL schema from the list of AWS-RDS connections]()
-3. []()
+1. [File ecnryption using GNU Privacy Guard](./shell-Scripts/encrypt.sh)
+2. [Automated MySQL Schema Backup and Upload to S3 Script](./shell-Scripts/mysql_db_backup.sh)
 
 
