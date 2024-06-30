@@ -7,6 +7,7 @@ This repository contains a collection of scripts designed to automate various ta
 1. [Backup Acumatica Artifacts to AWS-S3](./powershell-bat-Scripts/artifacts_backup_to_s3.ps1)
 2. [Clean temporary files from local](./powershell-bat-Scripts/clean_temp_files.ps1)
 3. [Encrypt web.config files of ASP.NET sites using regiis.exe](./powershell-bat-Scripts/Web.config_encryptor.ps1)
+4. [Scripts to create user and add to User Groups (custom and Windows Groups)](./powershell-bat-Scripts/Create%20Users/)
 
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"/>
 
